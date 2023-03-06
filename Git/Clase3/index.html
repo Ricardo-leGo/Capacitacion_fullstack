@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3</title>
+</head>
+<body>
+
+
+    <style>
+            .dos{
+                display:flex;
+            }
+
+            .Galeria{
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .Galeria > p{
+                width: 500px;
+                height: 600px;
+
+                border:solid 1px black;
+                margin: 8px;
+
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+    </style>
+
+    <h1 style="
+    
+    background-color: cadetblue;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+
+    "> Mi pagina web</h1>
+
+    <h5> 3ra clase</h5>
+
+
+
+
+    <div class="uno" style="background-color: yellow;" > 
+
+        <p style="width: 400px; background-color: blueviolet;"> no tengo mutaciones de impacto </p>
+        <p style="float: left; background-color: rgb(154, 47, 255); "> Soy flotado </p>
+
+    </div>
+
+
+
+    <div class="dos" style="background-color: black;" > 
+
+        <p style="width: 400px; background-color: red;"> estoy dentro de un flex </p>
+        <p style="float: left; background-color: cyan; "> soy el segundo flex </p>
+
+    </div>
+
+<!-- p*40 emmet --> 
+    <div class="Galeria">
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+        <p> elemento </p>
+    </div>
+
+    
+
+    <div id="identificadorunico" class="Galeria">
+
+    </div>
+
+
+
+
+    <script type="text/javascript">
+
+
+    async function TraemeLosPoquemones(){
+
+
+
+        const Data = fetch("https://pokeapi.co/api/v2/berry/")
+        .then(response => response.json())
+        .then(response =>{
+
+                    console.log(response, "soiy el contenedor")
+            response.results.forEach(element => {
+                
+              document.querySelector("#identificadorunico").innerHTML+= `<p>${element.name}</p>`      
+
+
+            });
+
+        })
+        .catch( err => console.log( "hola soy un error", err ) );
+
+        
+
+    }
+
+
+TraemeLosPoquemones()
+
+    </script>
+</body>
+</html>
